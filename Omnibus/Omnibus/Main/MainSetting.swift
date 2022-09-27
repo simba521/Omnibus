@@ -28,7 +28,7 @@ struct MainSetting: View {
             .frame(width: 150, height: 150)
             .background(Color.white)
             .cornerRadius(10)
-        
+            .shadow(color: .black.opacity(0.4), radius: 4, x: 0, y: 4)
     }
 }
 
