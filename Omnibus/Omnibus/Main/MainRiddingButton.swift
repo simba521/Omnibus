@@ -14,15 +14,17 @@ struct MainRiddingBUtton: View {
             Image("bus")
                 .resizable()
                 .frame(width: 100, height: 60)
+                
             
-            Text("버스 타러가기")
+            Text("타러가기")
                 .font(.system(size: 33))
                 .fontWeight(.bold)
+                .foregroundColor(Color.white)
         }
         .frame(width: 320, height: 150)
-        .background(Color.white)
+        .background(Color.black)
         .cornerRadius(10)
-        .shadow(color: .black.opacity(0.4), radius: 4, x: 0, y: 4)
+        .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 4)
     }
 }
 

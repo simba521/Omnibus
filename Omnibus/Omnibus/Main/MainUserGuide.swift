@@ -16,16 +16,17 @@ struct MainUserGuide: View {
                     .font(.system(size: 60))
                     .fontWeight(.bold)
                     .frame(width: 80, height: 80)
-                    .background(Color(red: 36 / 255, green: 71 / 255, blue: 194 / 255))
+                    .background(Color.white)
                     .cornerRadius(100)
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color.black)
                 Text("사용 방법")
                     .font(.system(size: 25))
                     .fontWeight(.bold)
+                    .foregroundColor(Color.white)
                     
             }
             .frame(width: 150, height: 150)
-            .background(Color.white)
+            .background(Color.black)
             .cornerRadius(10)
             .shadow(color: .black.opacity(0.4), radius: 4, x: 0, y: 4)
     }

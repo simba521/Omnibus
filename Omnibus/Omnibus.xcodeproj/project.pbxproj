@@ -10,6 +10,10 @@
 		FA25345728DC2B36000F345B /* MainRiddingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA25345628DC2B36000F345B /* MainRiddingButton.swift */; };
 		FA25345928DC36B2000F345B /* MainUserGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA25345828DC36B2000F345B /* MainUserGuide.swift */; };
 		FA637A4228DC44DB00C0FC6D /* MainSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA637A4128DC44DB00C0FC6D /* MainSetting.swift */; };
+		FA6AB6FD28E2CF3A00E0BA88 /* BusMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6AB6FC28E2CF3A00E0BA88 /* BusMain.swift */; };
+		FA6AB70028E2DCBC00E0BA88 /* StartPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6AB6FF28E2DCBC00E0BA88 /* StartPlace.swift */; };
+		FA6AB70228E3D95700E0BA88 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6AB70128E3D95700E0BA88 /* Logo.swift */; };
+		FA6AB70728E3DD5800E0BA88 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6AB70628E3DD5800E0BA88 /* BackButton.swift */; };
 		FA91272728DAF69C0082FCF3 /* OmnibusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA91272628DAF69C0082FCF3 /* OmnibusApp.swift */; };
 		FA91272928DAF69C0082FCF3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA91272828DAF69C0082FCF3 /* ContentView.swift */; };
 		FA91272B28DAF69E0082FCF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA91272A28DAF69E0082FCF3 /* Assets.xcassets */; };
@@ -20,6 +24,10 @@
 		FA25345628DC2B36000F345B /* MainRiddingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRiddingButton.swift; sourceTree = "<group>"; };
 		FA25345828DC36B2000F345B /* MainUserGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUserGuide.swift; sourceTree = "<group>"; };
 		FA637A4128DC44DB00C0FC6D /* MainSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSetting.swift; sourceTree = "<group>"; };
+		FA6AB6FC28E2CF3A00E0BA88 /* BusMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMain.swift; sourceTree = "<group>"; };
+		FA6AB6FF28E2DCBC00E0BA88 /* StartPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPlace.swift; sourceTree = "<group>"; };
+		FA6AB70128E3D95700E0BA88 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		FA6AB70628E3DD5800E0BA88 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		FA91272328DAF69C0082FCF3 /* Omnibus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Omnibus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA91272628DAF69C0082FCF3 /* OmnibusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmnibusApp.swift; sourceTree = "<group>"; };
 		FA91272828DAF69C0082FCF3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +56,24 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		FA6AB6FE28E2CF4000E0BA88 /* Bus */ = {
+			isa = PBXGroup;
+			children = (
+				FA6AB6FC28E2CF3A00E0BA88 /* BusMain.swift */,
+				FA6AB6FF28E2DCBC00E0BA88 /* StartPlace.swift */,
+			);
+			path = Bus;
+			sourceTree = "<group>";
+		};
+		FA6AB70828E3DD5C00E0BA88 /* OmniAssets */ = {
+			isa = PBXGroup;
+			children = (
+				FA6AB70128E3D95700E0BA88 /* Logo.swift */,
+				FA6AB70628E3DD5800E0BA88 /* BackButton.swift */,
+			);
+			path = OmniAssets;
+			sourceTree = "<group>";
+		};
 		FA91271A28DAF69C0082FCF3 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +96,8 @@
 				FA91272628DAF69C0082FCF3 /* OmnibusApp.swift */,
 				FA637A4028DC398E00C0FC6D /* Main */,
 				FA91272828DAF69C0082FCF3 /* ContentView.swift */,
+				FA6AB6FE28E2CF4000E0BA88 /* Bus */,
+				FA6AB70828E3DD5C00E0BA88 /* OmniAssets */,
 				FA91272A28DAF69E0082FCF3 /* Assets.xcassets */,
 				FA91272C28DAF69E0082FCF3 /* Preview Content */,
 			);
@@ -155,10 +183,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA25345928DC36B2000F345B /* MainUserGuide.swift in Sources */,
+				FA6AB70028E2DCBC00E0BA88 /* StartPlace.swift in Sources */,
 				FA25345728DC2B36000F345B /* MainRiddingButton.swift in Sources */,
 				FA91272928DAF69C0082FCF3 /* ContentView.swift in Sources */,
 				FA637A4228DC44DB00C0FC6D /* MainSetting.swift in Sources */,
+				FA6AB70728E3DD5800E0BA88 /* BackButton.swift in Sources */,
 				FA91272728DAF69C0082FCF3 /* OmnibusApp.swift in Sources */,
+				FA6AB70228E3D95700E0BA88 /* Logo.swift in Sources */,
+				FA6AB6FD28E2CF3A00E0BA88 /* BusMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

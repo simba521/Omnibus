@@ -9,22 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
-        ZStack {
-            
-            Color(red: 77 / 255, green: 132 / 255, blue: 190 / 255).ignoresSafeArea()
-            VStack {
-                MainRiddingBUtton()
-                HStack {
-                    MainUserGuide()
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
-                    MainSetting()
-                }
-                .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
-            } .padding(EdgeInsets(top: 300, leading: 0, bottom: 0, trailing: 0))
+        NavigationView {
+            ZStack {
                 
-            
-            
+                Color.white.ignoresSafeArea()
+                VStack {
+                    
+                    Logo()
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 120, trailing: 0))
+                    
+                    NavigationLink(destination: BusMain()){
+                        MainRiddingBUtton()
+                            .foregroundColor(Color.black)
+                    }
+                    HStack {
+                        MainUserGuide()
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
+                        MainSetting()
+                    }
+                    .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
+                }
+   
+            }
         }
     }
 }
