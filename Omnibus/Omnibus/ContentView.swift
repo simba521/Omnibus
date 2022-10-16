@@ -18,13 +18,15 @@ struct ContentView: View {
                     Logo()
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 120, trailing: 0))
                     
-                    NavigationLink(destination: BusMain()){
+                    NavigationLink(destination: BusMainView()){
                         MainRiddingBUtton()
                             .foregroundColor(Color.black)
                     }
                     HStack {
-                        MainUserGuide()
-                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
+                        NavigationLink(destination: test()) {
+                            MainUserGuide()
+                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
+                        }
                         MainSetting()
                     }
                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))

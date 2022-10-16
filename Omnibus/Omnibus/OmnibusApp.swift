@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct OmnibusApp: App {
+    var dattta = Dattta()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(dattta)
         }
     }
 }

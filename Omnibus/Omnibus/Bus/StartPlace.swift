@@ -9,27 +9,24 @@ import SwiftUI
 
 struct StartPlace : View {
     
-    @State var startPlace : String = ""
-    @State var destinationInput : String = ""
+    @State private var startPlace : String = ""
+    @State private var destinationInput : String = ""
     
     var body: some View {
-        VStack (alignment: .leading) {
-            Rectangle().frame(height: 0)
-            
-            TextField("출발지 설정", text: $startPlace)
+            VStack() {
+                Rectangle().frame(height: 0)
+                
+                TextField("출발지 설정", text: $startPlace).padding(.leading)
                     .frame(width: 311, height: 60)
-                    .background(Color.white)
-                    .cornerRadius(5)
-                TextField("도착지 설정", text: $destinationInput)
+                    .background(Color(uiColor: .secondarySystemBackground))
+                
+                TextField("도착지 설정", text: $destinationInput).padding(.leading)
                     .frame(width: 311, height: 60)
-                    .background(Color.white)
-                    .cornerRadius(5)
-        }
-        .padding(EdgeInsets(top: 59, leading: 58, bottom: 18, trailing: 21))
-        .frame(width: 390, height: 200)
-        .background(Color.yellow)
-        .ignoresSafeArea()
-
+                    .background(Color(uiColor: .secondarySystemBackground))
+                        
+            }.padding(EdgeInsets(top: 40, leading: 58, bottom: 18, trailing: 21))
+            .frame(width: 390, height: 200)
+            .background(Color.black)
         }
     }
     

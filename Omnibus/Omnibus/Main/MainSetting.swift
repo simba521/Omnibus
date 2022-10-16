@@ -12,7 +12,7 @@ struct MainSetting: View {
 
             
             VStack{
-                Image("setting")
+                Image("SettingIcon")
                     .resizable()
                     .frame(width: 89, height: 89)
                 

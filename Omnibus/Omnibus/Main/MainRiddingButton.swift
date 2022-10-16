@@ -11,7 +11,7 @@ struct MainRiddingBUtton: View {
     var body: some View {
        
         VStack {
-            Image("bus")
+            Image("BusIcon")
                 .resizable()
                 .frame(width: 100, height: 60)
                 
