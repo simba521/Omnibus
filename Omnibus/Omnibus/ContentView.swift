@@ -23,10 +23,8 @@ struct ContentView: View {
                             .foregroundColor(Color.black)
                     }
                     HStack {
-                        NavigationLink(destination: test()) {
-                            MainUserGuide()
-                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
-                        }
+                        MainUserGuide()
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
                         MainSetting()
                     }
                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))

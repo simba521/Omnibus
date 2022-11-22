@@ -8,24 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		FA61606628ED20DC0049C69F /* ApiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61606528ED20DC0049C69F /* ApiApp.swift */; };
-		FA61606828ED20DC0049C69F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61606728ED20DC0049C69F /* ContentView.swift */; };
 		FA61606A28ED20DE0049C69F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA61606928ED20DE0049C69F /* Assets.xcassets */; };
 		FA61606D28ED20DE0049C69F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA61606C28ED20DE0049C69F /* Preview Assets.xcassets */; };
 		FA61607528ED237E0049C69F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FA61607428ED237E0049C69F /* Alamofire */; };
-		FA61607728ED23B40049C69F /* BusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61607628ED23B40049C69F /* BusData.swift */; };
-		FA61607A28ED63130049C69F /* BusDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61607928ED63130049C69F /* BusDataViewModel.swift */; };
-		FA61607C28ED6FF20049C69F /* BusDataRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61607B28ED6FF20049C69F /* BusDataRowView.swift */; };
+		FAD91FB32923655F003416A0 /* jsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD91FB22923655F003416A0 /* jsonParsing.swift */; };
+		FAD91FB5292365BF003416A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD91FB4292365BF003416A0 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA61606228ED20DC0049C69F /* Api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Api.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA61606528ED20DC0049C69F /* ApiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiApp.swift; sourceTree = "<group>"; };
-		FA61606728ED20DC0049C69F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA61606928ED20DE0049C69F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA61606C28ED20DE0049C69F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FA61607628ED23B40049C69F /* BusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusData.swift; sourceTree = "<group>"; };
-		FA61607928ED63130049C69F /* BusDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDataViewModel.swift; sourceTree = "<group>"; };
-		FA61607B28ED6FF20049C69F /* BusDataRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDataRowView.swift; sourceTree = "<group>"; };
+		FAD91FB22923655F003416A0 /* jsonParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonParsing.swift; sourceTree = "<group>"; };
+		FAD91FB4292365BF003416A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +39,7 @@
 		FA61605928ED20DC0049C69F = {
 			isa = PBXGroup;
 			children = (
+				FA61606528ED20DC0049C69F /* ApiApp.swift */,
 				FA61606428ED20DC0049C69F /* Api */,
 				FA61606328ED20DC0049C69F /* Products */,
 			);
@@ -59,10 +56,8 @@
 		FA61606428ED20DC0049C69F /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				FA61606528ED20DC0049C69F /* ApiApp.swift */,
-				FA61607828ED23B70049C69F /* Data */,
-				FA61607B28ED6FF20049C69F /* BusDataRowView.swift */,
-				FA61606728ED20DC0049C69F /* ContentView.swift */,
+				FAD91FB4292365BF003416A0 /* ContentView.swift */,
+				FAD91FB22923655F003416A0 /* jsonParsing.swift */,
 				FA61606928ED20DE0049C69F /* Assets.xcassets */,
 				FA61606B28ED20DE0049C69F /* Preview Content */,
 			);
@@ -75,15 +70,6 @@
 				FA61606C28ED20DE0049C69F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		FA61607828ED23B70049C69F /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				FA61607628ED23B40049C69F /* BusData.swift */,
-				FA61607928ED63130049C69F /* BusDataViewModel.swift */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,11 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA61607728ED23B40049C69F /* BusData.swift in Sources */,
-				FA61607A28ED63130049C69F /* BusDataViewModel.swift in Sources */,
-				FA61606828ED20DC0049C69F /* ContentView.swift in Sources */,
-				FA61607C28ED6FF20049C69F /* BusDataRowView.swift in Sources */,
+				FAD91FB32923655F003416A0 /* jsonParsing.swift in Sources */,
 				FA61606628ED20DC0049C69F /* ApiApp.swift in Sources */,
+				FAD91FB5292365BF003416A0 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +207,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -277,7 +261,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
