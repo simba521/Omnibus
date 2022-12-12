@@ -9,16 +9,27 @@ import SwiftUI
 import Combine
 
 class TextFieldObserver : ObservableObject {
-    @Published var debouncedText = ""
-    @Published var searchText = ""
     
+    @Published var startText = ""
+    @Published var endText = ""
+    
+    @Published var startDebouncedText = ""
+    @Published var endDebouncedText = ""
+     
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
-        $searchText
-            .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
+        $startText
+            .debounce(for: .seconds(0.6), scheduler: DispatchQueue.main)
             .sink(receiveValue: { [weak self] t in
-                self?.debouncedText = t
+                self?.startDebouncedText = t
+            } )
+            .store(in: &subscriptions)
+        
+        $endText
+            .debounce(for: .seconds(0.6), scheduler: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] t in
+                self?.endDebouncedText = t
             } )
             .store(in: &subscriptions)
     }

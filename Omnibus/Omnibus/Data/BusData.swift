@@ -7,12 +7,30 @@
 
 import Foundation
 
+//MARK: - 길찾기
 struct FindWay: Codable {
-    var totalTime: Int //총 소요시간
-    var firstStartStation: String //출발정류장
-    var lastEndStation: String //도착정류장
-    var busNum: Int //버스 번호
+    let result: Result
 }
+
+struct Result: Codable {
+    let path: [Path]?
+}
+
+struct Path: Codable {
+    let subPath: [SubPath]?
+}
+
+struct SubPath: Codable {
+    let trafficType, stationCount: Int
+    let lane: [Lane]?
+}
+
+struct Lane: Codable {
+    let busNo: String
+    let busLocalBlID: String
+}
+
+//MARK: - 버스정류소 정보
 
 struct StationResponse: Codable {
     let msgHeader: MsgHeader

@@ -26,6 +26,7 @@
 		FA91AD472919F07C000BD29C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA91AD462919F07C000BD29C /* GoogleService-Info.plist */; };
 		FA91AD4A2919F1AB000BD29C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FA91AD492919F1AB000BD29C /* FirebaseAnalytics */; };
 		FA91AD4C2919F1AB000BD29C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FA91AD4B2919F1AB000BD29C /* FirebaseFirestore */; };
+		FAD7610D292C9E1A00706BCE /* SelectionRowExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7610C292C9E1A00706BCE /* SelectionRowExtention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		FA91272A28DAF69E0082FCF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA91272D28DAF69E0082FCF3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA91AD462919F07C000BD29C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAD7610C292C9E1A00706BCE /* SelectionRowExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionRowExtention.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				FA6AB70128E3D95700E0BA88 /* Logo.swift */,
 				FA813AC8292C56D600AAEBB7 /* DismissKeyboradExtention.swift */,
+				FAD7610C292C9E1A00706BCE /* SelectionRowExtention.swift */,
 			);
 			path = OmniAssets;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				FA813AC9292C56D600AAEBB7 /* DismissKeyboradExtention.swift in Sources */,
 				FA651A4928FB6AF500898D81 /* BusData.swift in Sources */,
 				FA25345928DC36B2000F345B /* MainUserGuide.swift in Sources */,
+				FAD7610D292C9E1A00706BCE /* SelectionRowExtention.swift in Sources */,
 				FA6AC73328FE4476006CD91B /* BusMainView.swift in Sources */,
 				FA25345728DC2B36000F345B /* MainRiddingButton.swift in Sources */,
 				FA651A4728FB424F00898D81 /* RequestAPI.swift in Sources */,

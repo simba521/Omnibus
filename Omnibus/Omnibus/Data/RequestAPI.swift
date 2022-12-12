@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class FindWayApi: ObservableObject {
+class hello: ObservableObject {
     @Published var data: FindWay?
     
     private let apiKey = "aJ3B2ShSVzvxB2r4WOH2Qw"

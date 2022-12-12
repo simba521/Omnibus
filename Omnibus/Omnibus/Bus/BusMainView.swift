@@ -11,53 +11,112 @@ import Combine
 struct BusMainView: View {
     @Environment(\.presentationMode) var mode
     
-    @ObservedObject var viewModel: StationInfoApi = StationInfoApi()
+    @ObservedObject var stationViewModel: StationInfoApi = StationInfoApi()
     @StateObject var textObserver: TextFieldObserver = TextFieldObserver()
+//    @ObservedObject var findWayViewModel: FindWayApi = FindWayApi()
     
-    @State var startStationSearchTerm: String = ""
-    @State var endStationSearchTerm: String = ""
+    @State private var startStationSearchTerm: String = ""
+    @State private var endStationSearchTerm: String = ""
+    
+    @State private var startStationIsSelected: Bool = false
+    @State private var endStationIsSelected: Bool = false
+
+    @State private var startTextFieldIsEditing: Bool = false
+    @State private var endTextFieldIsEditing: Bool = false
+    
+    @State private var startCoordinates = [String]()
+    @State private var endCoordinates = [String]()
     
     var body: some View {
         VStack {
-            VStack{
-                TextField("출발지 입력", text: $textObserver.searchText).padding(.leading)
+            VStack {
+                TextField("출발지 입력", text: $textObserver.startText).padding(.leading)
                     .frame(width: 350, height: 60)
                     .background(Color(.systemGray6))
                     .cornerRadius(8)
-                    .onReceive(textObserver.$debouncedText) { val in
+                    .onReceive(textObserver.$startDebouncedText) { val in
                         startStationSearchTerm = val
                     }
                     .onChange(of: startStationSearchTerm) { newValue in
+                        guard !startStationIsSelected else {
+                            startStationIsSelected = false
+                            return
+                        }
                         guard startStationSearchTerm.replacingOccurrences(of: " ", with: "") != "" else { return }
-                        viewModel.getBusStation(searchTerm: startStationSearchTerm)
+                        stationViewModel.getBusStation(searchTerm: newValue)
+//                        findWayViewModel.getStationCoordinates(searchCoordinates: startCoordinates)
+                        
                     }
+                    .onTapGesture {
+                        startTextFieldIsEditing = true
+                        endTextFieldIsEditing = false
+                        
+                    }
+               
                 
-                TextField("도착지 입력", text: $endStationSearchTerm).padding(.leading)
+                TextField("도착지 입력", text: $textObserver.endText).padding(.leading)
                     .frame(width: 350, height: 60)
                     .background(Color(.systemGray6))
                     .cornerRadius(8)
+                    .onReceive(textObserver.$endDebouncedText) { val in
+                        endStationSearchTerm = val
+                    }
+                    .onChange(of: endStationSearchTerm) { newValue in
+                        guard !endStationIsSelected else {
+                            endStationIsSelected = false
+                            return
+                        }
+                        guard endStationSearchTerm.replacingOccurrences(of: " ", with: "") != "" else { return }
+                        stationViewModel.getBusStation(searchTerm: newValue)
+//                        findWayViewModel.getStationCoordinates(searchCoordinates: endCoordinates)
+                        
+                    }
+                    .onTapGesture {
+                        startTextFieldIsEditing = false
+                        endTextFieldIsEditing = true
+                    }
+            }
+            .onTapGesture {
+                self.hideKeyboard()
             }
             .padding(EdgeInsets(top: 100, leading: 0, bottom: 0, trailing: 0))
             .frame(maxWidth: .infinity, maxHeight: 250 )
             .background(.black)
             .ignoresSafeArea()
             
-            if viewModel.stationData != nil {
+            if stationViewModel.stationInfoStationData != nil {
                 NavigationView {
                     List {
-                        ForEach(viewModel.stationData!, id: \.self) { station in
-                            Text(station.stNm)
+                        ForEach(stationViewModel.stationInfoStationData!, id: \.self) { station in
+                            Button {
+                                if startTextFieldIsEditing {
+                                    startStationIsSelected = true
+                                    startCoordinates = [station.tmX, station.tmY]
+                                    textObserver.startText = station.stNm
+                                    print(startCoordinates[0])
+                                } else if endTextFieldIsEditing {
+                                    endStationIsSelected = true
+                                    textObserver.endText = station.stNm
+                                    endCoordinates = [station.tmX, station.tmY]
+                                }
+                            } label: {
+                                Text(station.stNm)
+                            }
                         }
-                    }
+                    }.listStyle(.inset)
                 }
             } else {
                 Spacer()
                 
-                if let headerData = viewModel.headerData {
-                    if headerData.headerCD != "0" {
-                        Text(headerData.headerMsg)
-                    } else if headerData.itemCount == 0 {
+                if stationViewModel.stationInfoStationData == nil {
+                    ProgressView()
+                }
+                
+                if let headerData = stationViewModel.stationInfoHeaderData {
+                    if stationViewModel.stationInfoStationData != nil && headerData.itemCount == 0 {
                         Text("검색 결과가 없습니다.")
+                    } else if headerData.headerCD != "0" {
+                        Text(headerData.headerMsg)
                     }
                 }
                 
@@ -78,9 +137,3 @@ struct BusMainView: View {
 }
 
 
-struct BusMain_Previews: PreviewProvider {
-    static var previews: some View {
-        BusMainView()
-            .previewDevice("iPhone X")
-    }
-}

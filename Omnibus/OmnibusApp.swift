@@ -10,12 +10,12 @@ import SwiftUI
 @main
 struct OmnibusApp: App {
 
-    var requestApi: FindWayApi = FindWayApi()
+//    var requestApi: FindWayApi = FindWayApi()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(requestApi)
+//                .environmentObject(requestApi)
         }
     }
 }
